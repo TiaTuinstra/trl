@@ -273,7 +273,7 @@ class SFTTrainer(Trainer):
             outputs = tokenizer(
                 element[dataset_text_field] if not use_formatting_func else formatting_func(element),
                 truncation=True,
-                padding=False,
+                padding='max_length',
                 max_length=max_seq_len,
                 return_overflowing_tokens=False,
                 return_length=False,
